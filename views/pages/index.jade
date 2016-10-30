@@ -1,0 +1,47 @@
+extends ../layout
+
+block content
+
+    section.category
+        h2
+            i.iconfont &#xE60C;
+            | &#x5206;&#x7C7B;&#x6807;&#x7B7E;
+
+        .cat-tag
+            for tag in allTags
+                a(href='/tags/'+ tag) #{tag}
+
+
+    .main
+        for post in posts
+            article.post
+                h2 #{post.title}
+                    time #{post.date}
+
+                .post-content
+                    .post-meta
+                        ul
+                            li
+                                i.iconfont &#xE60E;
+
+                            li
+                                i.iconfont &#xE60C;
+                                for tag in post.tags
+                                    b #{tag}
+
+                    p.post-abs
+                        | #{post.abstract}
+
+                    a.post-more(href="/posts/"+post.name)
+                        | Read more
+                        i.iconfont &#xE60D;
+
+        #pagination
+            a.iconfont.pre(href=pageURL + parseInt(parseInt(page)-1)) &#xE60A;
+            a.page-number 当前第#{page}页 共#{length}页
+            a.iconfont.next(href=pageURL + parseInt(parseInt(page)+1)) &#xE60B;
+
+    .elevator
+        ul
+            li#goTop(title='返回顶部')
+                i.iconfont &#xE605;

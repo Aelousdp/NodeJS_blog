@@ -1,0 +1,66 @@
+doctype html
+html(lang='zh-CN')
+    head
+        meta(charset='UTF-8')
+        title Zzr blog
+        meta(http-equiv='x-ua-compatible', content='ie=edge')
+        meta(name='viewport', content='width=device-width,initial-scale=1')
+        link(rel='stylesheet', href='/css/normalize.css', type='text/css')
+        link(rel='stylesheet', href='/css/main.css', type='text/css')
+        link(rel='stylesheet', href='/css/unit.css', type='text/css')
+        link(rel='stylesheet', href='/css/markdown.css', type='text/css')
+    body
+        //if lte IE 8
+          p.browser-upgrade
+            | &#x60A8;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x7248;&#x672C;&#x90FD;&#x8001;&#x7684;&#x6389;&#x7259;&#x5566;&#xFF0C;&#x8BF7;&#x5230;
+            a(href='http://browsehappy.com') &#x8FD9;&#x91CC;
+            | &#x66F4;&#x65B0;&#xFF0C;&#x4EE5;&#x83B7;&#x53D6;&#x6700;&#x4F73;&#x4F53;&#x9A8C;
+        section.sidebar
+            .header
+                img.header-brand(src='/img/sidebar-brand.jpg', alt='brand')
+                h1.header-name Zzr&#x7684;&#x535A;&#x5BA2;
+            nav.main
+                ul
+                    li.active
+                        a(href='/', title='博客首页')
+                            i.iconfont &#xE600;
+                            span home
+                    li
+                        a(href='/demo', title='小的demo')
+                            i.iconfont &#xE603;
+                            span demo
+                    li
+                        a(href='#', title='关于')
+                            i.iconfont &#xE612;
+                            span about
+                    li
+                        a(href='https://github.com/Zhangzirui/', title='我的github')
+                            i.iconfont &#xE611;
+                            span github
+            .menu(style='display: none')
+                i.iconfont.menu-icon &#xE606;
+                ul(style='display: none')
+                    li.active
+                        a(href='#', title='博客首页')
+                            i.iconfont &#xE600;
+                            span home
+                    li
+                        a(href='#', title='小的demo')
+                            i.iconfont &#xE603;
+                            span demo
+                    li
+                        a(href='#', title='关于')
+                            i.iconfont &#xE612;
+                            span about
+                    li
+                        a(href='#', title='我的github')
+                            i.iconfont &#xE611;
+                            span github
+        .container
+            block content
+
+
+            footer
+                p.copyright Copyright &copy; Zhangzirui
+
+        script(type='text/javascript', src='/js/require.js', data-main='../../js/main.js')

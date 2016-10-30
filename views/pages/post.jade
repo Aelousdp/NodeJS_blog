@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+
+    .main
+
+        article.markdown !{htmlContent}
+
+            .pay
+                .pay-content
+                    p 如果这篇文章对你很有帮助，你可以犒劳一下WO
+                    a.pay-btn 打赏
+
+    .elevator
+        ul
+
+            li#goTop(title='返回顶部')
+                i.iconfont &#xE605;
