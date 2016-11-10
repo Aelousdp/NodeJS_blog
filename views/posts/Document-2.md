@@ -1,6 +1,6 @@
 <!--title: 如何将github仓库中的项目效果展现在github pages中-->
 <!--date: 2016-04-30-->
-<!--tags: blog, github-->
+<!--tags: blog, git-->
 <!--abstract: 众所周知github能托管代码，但是代码效果却不能直接展现出来。于是我准备在这个博客的demo中展示我已经完成或者将来将要完成的项目，那么问题来了...-->
 
 

@@ -1,7 +1,7 @@
 <!--title: 梯度下降算法-->
 <!--date: 2016-05-22-->
 <!--tags: Machine Learning-->
-<!--abstract: "机器学习什么的还是要打牢基础，每个算法尽量都自己实现一遍。最近在看斯坦福大牛Andrew Ng的机器学习公开课，这是第一篇——线性回归...-->
+<!--abstract: 机器学习什么的还是要打牢基础，每个算法尽量都自己实现一遍。最近在看斯坦福大牛Andrew Ng的机器学习公开课，这是第一篇——线性回归...-->
 
 
 %metaEnd%
@@ -17,12 +17,15 @@
 	
 
 线性回归模型可以用公式表示为：
-<p style="TEXT-ALIGN: center" contentEditable=true><img src="http://cezrh.img48.wal8.com/img48/544629_20160502104557/146381710162.png" /></p>
+
+![](http://cezrh.img48.wal8.com/img48/544629_20160502104557/146381710162.png)
+
 其中n是变量的个数
 
 则回归模型与真实值之间的误差损失可以表示为
 
-<p style="TEXT-ALIGN: center" contentEditable=true><img src="http://cezrh.img48.wal8.com/img48/544629_20160502104557/146381710222.png" /><br /></p>
+![](http://cezrh.img48.wal8.com/img48/544629_20160502104557/146381710222.png)
+
 其中m是样本的个数
 
 
@@ -31,12 +34,17 @@
 ###批梯度下降算法(batch gradient descent)
 
 为了找出合适的theta的值使误差损失最小，首先就要初始化theta，这个初始化是随机的，定它为0还是为1都行。然后通过下面的公式，反复迭代更新theta，直至找出合适的theta。
-<p style="TEXT-ALIGN: center" contentEditable=true><img src="http://cezrh.img48.wal8.com/img48/544629_20160502104557/146381889746.png" /><br /></p>
+
+![](http://cezrh.img48.wal8.com/img48/544629_20160502104557/146381889746.png)
+
 其中alpha为迭代的速度，上式化简可得
-<p style="TEXT-ALIGN: center" contentEditable=true><img src="http://cezrh.img48.wal8.com/img48/544629_20160502104557/146381917252.png" /><br /></p>
+
+![](http://cezrh.img48.wal8.com/img48/544629_20160502104557/146381917252.png)
 
 然后<span id='jump'>梯度下降算法的核心</span>就出现啦（具体的说是批梯度下降算法），
-<p style="TEXT-ALIGN: center" contentEditable=true><img src="http://cezrh.img48.wal8.com/img48/544629_20160502104557/146381889877.png" /><br /></p>
+
+![](http://cezrh.img48.wal8.com/img48/544629_20160502104557/146381889877.png)
+
 上程序(python实现，下同)
 	
 	# -*- coding: utf-8 -*-
@@ -106,7 +114,8 @@
 	    bat.batch(x_arr, y_arr) 
 
 其中输入的数据来自于[Stanford Exercise 2: Linear Regression](http://openclassroom.stanford.edu/MainFolder/DocumentPage.php?course=MachineLearning&doc=exercises/ex2/ex2.html)，结果图如下：
-<p style="TEXT-ALIGN: center" contentEditable=true><img src="http://cezrh.img48.wal8.com/img48/544629_20160502104557/146986987107.png" /><br /></p>
+
+![](http://cezrh.img48.wal8.com/img48/544629_20160502104557/146986987107.png)
 
 接着我想沿用这个程序试一试多元线性回归，数据来源于[Stanford Exercise 3](http://openclassroom.stanford.edu/MainFolder/DocumentPage.php?course=MachineLearning&doc=exercises/ex3/ex3.html)。该教程提出来数据预处理，因为x矩阵中两列的数据相差太大，会严重影响梯度下降算法的效率。
 
@@ -195,12 +204,16 @@
 	    
 	    y_arr = bat.loadData(fileName2)  
 	    bat.batch(x_arr, y_arr)   
-结果图为：<p style="TEXT-ALIGN: center" contentEditable=true><img src="http://cezrh.img48.wal8.com/img48/544629_20160502104557/146986987042.png" /><br /></p>
+结果图为：
+
+![](http://cezrh.img48.wal8.com/img48/544629_20160502104557/146986987042.png)
 
 ###随机梯度下降算法(stochastic gradient descent)
 
 随机梯度下降算法其实是针对批梯度下降算法处理大规模数据计算量过大计算时间过长而做出的小改变。让我们看看随机梯度下降算法执行过程：
-<p style="TEXT-ALIGN: center" contentEditable=true><img src="http://cezrh.img48.wal8.com/img48/544629_20160502104557/146987081492.png" /><br /></p>
+
+![](http://cezrh.img48.wal8.com/img48/544629_20160502104557/146987081492.png)
+
 与[批梯度下降算法的过程](#jump)相比,批梯度算法是把所有的样本计算一遍后再进行一次theta迭代。而随机梯度下降算法是每计算一个训练样本就迭代一次，这样theta的迭代次数明显加快。当然这样也导致了随机梯度下降算法的计算精度不如批梯度算法。
 
 随机梯度下降的程序和批梯度的差不多，在这里就不贴出来了，想参考的童鞋可以到[这里](#)下载。
@@ -286,8 +299,8 @@
 	    m.l_r(f1, f2)
 
 程序图如下：
-<p style="TEXT-ALIGN: center" contentEditable=true><img src="http://cezrh.img48.wal8.com/img48/544629_20160502104557/146994974665.png" /><br /></p>
-<p style="TEXT-ALIGN: center" contentEditable=true><img src="http://cezrh.img48.wal8.com/img48/544629_20160502104557/146995029106.png" /><br /></p>
 
+![](http://cezrh.img48.wal8.com/img48/544629_20160502104557/146994974665.png)
+![](http://cezrh.img48.wal8.com/img48/544629_20160502104557/146995029106.png)
 
 (完)
