@@ -41,6 +41,27 @@ html(lang='zh-CN')
                         a(href='https://github.com/Zhangzirui/', title='我的github')
                             i.iconfont &#xE611;
                             span github
+
+            .smallMenu
+                i.iconfont.smallMenu-icon &#xE606;
+                ul(style='display: none' class='smallMenu-content')
+                    li.active
+                        a(href='/', title='博客首页')
+                            i.iconfont &#xE600;
+                            span home
+                    li
+                        a(href='/demos/demo', title='小的demo')
+                            i.iconfont &#xE603;
+                            span demo
+                    li
+                        a(href='#', title='关于')
+                            i.iconfont &#xE612;
+                            span about
+                    li
+                        a(href='https://github.com/Zhangzirui/', title='我的github')
+                            i.iconfont &#xE611;
+                            span github
+
         .container
             block content
 
