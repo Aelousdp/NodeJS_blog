@@ -250,9 +250,9 @@ function postCompare(value1, value2) {
     var time1 = parseInt(value1.date.split('-').join("")),
         time2 = parseInt(value2.date.split('-').join(""));
     if(time1 < time2){
-        return -1;
-    }else if(time1 > time2) {
         return 1;
+    }else if(time1 > time2) {
+        return -1;
     }else {
         return 0
     }
